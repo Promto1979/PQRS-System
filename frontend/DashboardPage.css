@@ -1,0 +1,162 @@
+/* --- Contenedor Principal --- */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Cabecera del Dashboard --- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    color: #333;
+}
+
+.logout-button {
+    background-color: #d9534f; /* Rojo */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.logout-button:hover {
+    background-color: #c9302c;
+}
+
+/* --- Rejilla de KPIs (Indicadores) --- */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.kpi-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.kpi-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.kpi-card p {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Colores específicos para KPIs */
+.kpi-card.total p { color: #0275d8; }
+.kpi-card.recibido p { color: #f0ad4e; }
+.kpi-card.gestion p { color: #5bc0de; }
+.kpi-card.cerrado p { color: #5cb85c; }
+
+/* --- Sección Genérica --- */
+.dashboard-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard-section h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* --- Filtros --- */
+.dashboard-filters {
+    display: flex;
+    gap: 1rem;
+}
+
+.dashboard-filters select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    flex-grow: 1; /* Para que ocupen el espacio */
+}
+
+/* --- Tabla de Solicitudes --- */
+.dashboard-table table {
+    width: 100%;
+    border-collapse: collapse; /* Bordes limpios */
+}
+
+.dashboard-table th, .dashboard-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+.dashboard-table th {
+    background-color: #f7f7f7;
+    color: #444;
+}
+
+/* Tags de Estado */
+.estado-tag {
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    background-color: #888; /* Default */
+}
+
+.estado-tag.estado-recibido { background-color: #f0ad4e; } /* Naranja */
+.estado-tag.estado-en { background-color: #5bc0de; } /* Azul claro */
+.estado-tag.estado-cerrado { background-color: #5cb85c; } /* Verde */
+.estado-tag.estado-rechazado { background-color: #d9534f; } /* Rojo */
+
+/* --- Controles de Paginación --- */
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.pagination-controls span {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.pagination-controls button {
+    background-color: #0275d8;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}

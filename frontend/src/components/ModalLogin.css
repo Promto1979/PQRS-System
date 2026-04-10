@@ -1,0 +1,98 @@
+/* frontend/src/components/ModalLogin.css */
+
+/* Reestablece algunos estilos para que este modal sea más compacto */
+.modal-login-content {
+    background: white;
+    width: 90%;
+    max-width: 400px; /* Hacemos el modal más angosto */
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    padding: 20px 30px; /* Padding interno más ajustado */
+    overflow-y: auto;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Título Iniciar Sesión */
+.modal-login-content h2 {
+    text-align: center;
+    color: #007bff;
+    margin-top: 10px; /* Reducimos el margen superior */
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* Estilos de los grupos de formulario dentro del modal */
+.modal-login-content .form-group {
+    margin-bottom: 15px; /* Menos espacio entre campos */
+}
+
+.modal-login-content .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Inputs de texto y contraseña */
+.modal-login-content input[type="text"],
+.modal-login-content input[type="password"] {
+    width: 100%;
+    padding: 10px; /* Padding más ajustado en los inputs */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Botón de Ingresar */
+.modal-login-content .login-button {
+    width: 100%;
+    padding: 12px; /* Padding más ajustado en el botón */
+    background-color: #007bff; /* Azul, consistente con el Navbar */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.modal-login-content .login-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.modal-login-content .login-button:disabled {
+    background-color: #a0c0e0; /* Color cuando está deshabilitado */
+}
+
+/* Mensaje de error */
+.modal-login-content .error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* Botón de cerrar (X) */
+.modal-login-content .close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+}
+
+.modal-login-content .close-modal-btn:hover {
+    color: #dc3545;
+}

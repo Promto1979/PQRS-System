@@ -1,0 +1,69 @@
+/* --- PaginaGestion.css --- */
+
+/* Contenedor principal (similar al dashboard) */
+.gestion-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra-tarjeta);
+}
+
+/* Cabecera */
+.gestion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.gestion-header h2 {
+    margin: 0;
+    color: var(--color-primario); /* Usamos el color primario */
+}
+
+/* Botón de volver (usa los estilos globales de 'button') */
+.button-volver {
+    background-color: var(--color-secundario);
+    /* Hereda padding, color, etc., de la clase 'button' global */
+}
+
+/* División en dos columnas */
+.gestion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 2rem;
+}
+
+.gestion-info, .gestion-historial {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: var(--borde-radio);
+}
+
+.gestion-info h3, .gestion-historial h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+/* Formulario de Acciones */
+.acciones-form {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Los 'select' y 'button' ya tienen estilos globales de index.css */
+/* Solo ajustamos el botón de actualizar */
+.acciones-form button {
+    background-color: var(--color-exito); /* Verde para la acción de actualizar */
+}
+
+.gestion-historial textarea {
+    min-height: 100px;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,80 @@
+/* --- index.css (Archivo Global) --- */
+
+/* 1. Definición de Variables CSS (Fuente de Verdad) */
+:root {
+    --color-primario: #0275d8;
+    --color-secundario: #333;
+    --color-exito: #5cb85c;
+    --color-peligro: #d9534f;
+    --color-advertencia: #f0ad4e;
+    --color-info: #5bc0de;
+    
+    --color-fondo: #f4f4f4;
+    --color-fondo-tarjeta: #ffffff;
+    --color-texto: #333;
+    --color-texto-inverso: #ffffff;
+    --borde-radio: 4px;
+    --sombra-tarjeta: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 2. Estilos Base (Reseteo y Estilos Globales) */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* 3. Estilos consistentes para Botones */
+button, .button {
+    background-color: var(--color-primario);
+    color: var(--color-texto-inverso);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--borde-radio);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+button:hover, .button:hover {
+    opacity: 0.9;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* 4. Estilos consistentes para Inputs y Selects */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: var(--borde-radio);
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    font-size: 1rem;
+}
+
+/* 5. Clases de utilidad */
+.alert-danger {
+    color: var(--color-peligro);
+    background-color: #fdd;
+    padding: 1rem;
+    border: 1px solid var(--color-peligro);
+    border-radius: var(--borde-radio);
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    color: var(--color-exito);
+    background-color: #dfd;
+    padding: 1rem;
+    border: 1px solid var(--color-exito);
+    border-radius: var(--borde-radio);
+    margin-bottom: 1rem;
+}

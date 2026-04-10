@@ -1,0 +1,71 @@
+-- 1. Tabla de Roles para usuarios internos (según documento)
+CREATE TABLE IF NOT EXISTS Roles (
+    id_rol INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_rol VARCHAR(50) NOT NULL UNIQUE COMMENT 'Administrador, Gestor, Supervisor'
+);
+
+-- Insertamos los roles definidos en el proyecto
+INSERT INTO Roles (nombre_rol) VALUES
+('Administrador'),
+('Gestor'),
+('Supervisor');
+
+-- 2. Tabla de Usuarios internos (los que gestionan las PQRS)
+CREATE TABLE IF NOT EXISTS Usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    hashed_password VARCHAR(255) NOT NULL,
+    id_rol INT,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_rol) REFERENCES Roles(id_rol)
+) COMMENT 'Usuarios internos para la gestión del sistema';
+
+-- 3. Tabla principal de PQRS (el corazón del sistema)
+CREATE TABLE IF NOT EXISTS PQRS (
+    id_pqrs INT AUTO_INCREMENT PRIMARY KEY,
+    numero_radicado VARCHAR(50) NOT NULL UNIQUE COMMENT 'Generado automáticamente',
+    
+    -- Clasificación de la solicitud
+    tipo_solicitud ENUM('Petición', 'Queja', 'Reclamo', 'Sugerencia') NOT NULL,
+    
+    -- Datos del solicitante (ciudadano/cliente)
+    nombre_solicitante VARCHAR(255) NOT NULL,
+    email_solicitante VARCHAR(255) NOT NULL,
+    
+    -- Contenido de la solicitud
+    asunto VARCHAR(255) NOT NULL,
+    descripcion TEXT NOT NULL,
+    
+    -- Estado y gestión
+    estado ENUM('Recibido', 'En Gestión', 'Cerrado', 'Rechazado') DEFAULT 'Recibido',
+    id_gestor_asignado INT NULL COMMENT 'Usuario interno asignado a esta PQRS',
+    
+    -- Plazos y Semaforización (preparado para la lógica de negocio)
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_vencimiento TIMESTAMP NULL,
+    
+    FOREIGN KEY (id_gestor_asignado) REFERENCES Usuarios(id_usuario)
+) COMMENT 'Tabla central de todas las solicitudes PQRS';
+
+-- 4. Tabla para el historial y trazabilidad
+CREATE TABLE IF NOT EXISTS Historial_PQRS (
+    id_historial INT AUTO_INCREMENT PRIMARY KEY,
+    id_pqrs INT NOT NULL,
+    id_usuario_accion INT NULL COMMENT 'Usuario interno que realiza la acción (si aplica)',
+    accion_realizada TEXT NOT NULL COMMENT 'Ej: Creación, Asignación a Gestor, Cambio de Estado, Cierre',
+    fecha_accion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_pqrs) REFERENCES PQRS(id_pqrs) ON DELETE CASCADE,
+    FOREIGN KEY (id_usuario_accion) REFERENCES Usuarios(id_usuario)
+) COMMENT 'Auditoría y trazabilidad de cada PQRS';
+
+-- 5. Tabla para los archivos adjuntos
+CREATE TABLE IF NOT EXISTS Adjuntos (
+    id_adjunto INT AUTO_INCREMENT PRIMARY KEY,
+    id_pqrs INT NOT NULL,
+    url_archivo VARCHAR(1024) NOT NULL,
+    nombre_archivo VARCHAR(255),
+    tipo_mime VARCHAR(100),
+    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_pqrs) REFERENCES PQRS(id_pqrs) ON DELETE CASCADE
+) COMMENT 'Almacena las rutas a los archivos adjuntos de una PQRS';

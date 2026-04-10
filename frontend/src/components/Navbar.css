@@ -1,0 +1,88 @@
+/* frontend/src/components/Navbar.css */
+
+.navbar {
+    /* FIX: Asegura que ocupe todo el ancho, ignorando el centrado del #root */
+    width: 100%; 
+    box-sizing: border-box; /* Para que el padding no rompa el ancho */
+    
+    background-color: #343a40; /* Fondo oscuro */
+    padding: 15px 40px; /* Espacio interno cómodo */
+    
+    display: flex;
+    justify-content: space-between; /* Distribuye: Izquierda - Centro - Derecha */
+    align-items: center; /* Centra verticalmente */
+    
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    color: white;
+    
+    /* Opcional: Fijar arriba para que no se mueva al hacer scroll */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO / MARCA (Izquierda) */
+.navbar-brand {
+    flex: 1; /* Ocupa espacio disponible para empujar el resto */
+}
+
+.navbar-brand a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+/* MENÚ CENTRAL */
+.navbar-menu {
+    flex: 2; /* Ocupa más espacio para centrarse bien */
+    display: flex;
+    justify-content: center; /* Centra los enlaces en la mitad de la pantalla */
+    gap: 30px; /* Espacio entre enlaces */
+}
+
+/* Enlaces del menú */
+.nav-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.2s;
+    
+    /* Reset para cuando es un botón */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    transform: translateY(-1px); /* Pequeño efecto al pasar el mouse */
+}
+
+/* BOTÓN ACCIÓN (Derecha) */
+.navbar-actions {
+    flex: 1; /* Ocupa espacio disponible */
+    display: flex;
+    justify-content: flex-end; /* Alinea a la derecha absoluta */
+}
+
+.btn-interno {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-interno:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);
+}

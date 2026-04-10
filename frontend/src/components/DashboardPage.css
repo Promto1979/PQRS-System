@@ -1,0 +1,129 @@
+/* Estilos para DashboardPage.css */
+.dashboard-container {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-header h1 {
+    margin-top: 0;
+    color: #333; /* Título oscuro */
+}
+
+.logout-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* --- KPIs --- */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.kpi-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.kpi-card h2 { margin: 0 0 0.5rem 0; font-size: 1rem; text-transform: uppercase; }
+.kpi-card p { margin: 0; font-size: 2.5rem; font-weight: bold; }
+
+/* Colores de las tarjetas KPI */
+.kpi-card.total { background-color: #007bff; }
+.kpi-card.recibido { background-color: #ffc107; color: #333; }
+.kpi-card.gestion { background-color: #17a2b8; }
+.kpi-card.cerrado { background-color: #28a745; }
+.kpi-card.rechazado { background-color: #dc3545; }
+
+/* --- TABLA --- */
+.table-container {
+    margin-top: 3rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.table-container h2 { color: #333; margin-top: 0; }
+
+.pqrs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+/* Texto oscuro forzado en cabecera y celdas */
+.pqrs-table th {
+    padding: 12px 15px;
+    background-color: #f4f4f4;
+    text-align: left;
+    font-weight: 600;
+    color: #555; 
+    border-bottom: 2px solid #ddd;
+}
+
+.pqrs-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    vertical-align: middle;
+}
+
+/* --- SEMAFORIZACIÓN (BADGES) --- */
+.badge {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* COLORES DE ESTADO (Deben coincidir con DB en minúsculas) */
+.badge.status-recibido { background-color: #ffc107; color: #333; } /* Amarillo */
+.badge.status-en_gestion { background-color: #17a2b8; } /* Azul Cian - OJO: sin tilde */
+.badge.status-cerrado { background-color: #28a745; } /* Verde */
+.badge.status-rechazado { background-color: #dc3545; } /* Rojo */
+
+/* COLORES DE TIPO */
+.badge.tipo-peticion { background-color: #6c757d; } /* Gris */
+.badge.tipo-queja { background-color: #fd7e14; } /* Naranja */
+.badge.tipo-reclamo { background-color: #dc3545; } /* Rojo */
+.badge.tipo-sugerencia { background-color: #007bff; } /* Azul */
+
+/* Radicado Monospace */
+.font-mono {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #0056b3 !important;
+}
+
+/* Botón de Acción */
+.btn-action {
+    background-color: #343a40;
+    color: rgb(137, 126, 126);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+.btn-action:hover { background-color: #495057; }

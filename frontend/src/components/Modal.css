@@ -1,0 +1,53 @@
+/* frontend/src/components/Modal.css */
+
+/* El fondo oscuro que cubre toda la pantalla */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté encima de todo */
+    backdrop-filter: blur(3px); /* Efecto borroso bonito */
+}
+
+/* La caja blanca del contenido */
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 800px; /* Ancho máximo */
+    max-height: 90vh; /* No más alto que la pantalla */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    padding: 25px;
+    overflow-y: auto; /* Scroll interno si el contenido es largo */
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Botón X para cerrar */
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+}
+
+.close-modal-btn:hover {
+    color: #dc3545;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

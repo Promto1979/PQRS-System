@@ -1,0 +1,72 @@
+/* --- FormularioPQRS.css (Refactorizado) --- */
+
+/* (Este archivo ahora es mucho más pequeño) */
+
+.form-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: var(--borde-radio);
+    background-color: var(--color-fondo-tarjeta); /* <-- Variable */
+    box-shadow: var(--sombra-tarjeta); /* <-- Variable */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* La mayoría de estilos de input y button ya vienen de index.css */
+
+.error-msg {
+    color: var(--color-peligro); /* <-- Variable */
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* --- CORRECCIÓN DE VISIBILIDAD PARA GESTIÓN --- */
+
+/* 1. Forzar texto oscuro en la sección de detalles */
+.detail-section {
+    background-color: #f9f9f9; /* Fondo gris muy claro */
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    
+    /* ¡ESTA ES LA CLAVE! */
+    color: #333 !important; 
+}
+
+/* 2. Asegurar que títulos y párrafos sean oscuros */
+.detail-section h3,
+.detail-section p,
+.detail-section strong,
+.detail-section span {
+    color: #333 !important;
+}
+
+/* 3. Sección de Acciones (Respuesta) */
+.actions-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.actions-section h3 {
+    color: #007bff; /* Azul para el título */
+    margin-top: 0;
+}
+
+.actions-section textarea {
+    background-color: #fff;
+    color: #000; /* Texto negro al escribir */
+    border: 1px solid #ccc;
+}

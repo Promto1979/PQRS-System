@@ -1,0 +1,151 @@
+/* Estilos específicos para el Modal de Seguimiento */
+
+.modal-seguimiento-content {
+    background: white;
+    width: 95%;
+    max-width: 600px; /* Un ancho cómodo para leer */
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 25px;
+    overflow-y: auto; /* Solo scroll vertical si es necesario */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    position: relative;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Título */
+.modal-seguimiento-content h2 {
+    text-align: center;
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.modal-seguimiento-content .subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* Buscador */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+    border-color: #007bff;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-box button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.search-box button:disabled {
+    background-color: #ccc;
+}
+
+/* Resultados */
+.result-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.info-value {
+    color: #333;
+}
+
+/* Bloque de Respuesta */
+.response-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 5px solid;
+}
+
+.response-box.success {
+    background-color: #e6ffe6;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.response-box.rejected {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.response-box.pending {
+    background-color: #fff3cd;
+    border-color: #ffc107;
+    color: #856404;
+    text-align: center;
+}
+
+/* Botón Cerrar (X) */
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+}
+.close-modal-btn:hover {
+    color: #333;
+}
