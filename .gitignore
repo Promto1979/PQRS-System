@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# Bases de Datos (¡La seguridad, Jose!)
+*.db
+backend/gansito.db
+
+# Node / React
+node_modules/
+frontend/node_modules/
+dist/
+.DS_Store
