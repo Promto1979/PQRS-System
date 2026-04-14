@@ -43,11 +43,6 @@ Actualmente, el proyecto se encuentra en una fase de optimización para alcanzar
 
 ---
 
-## 👨‍💻 Autor
-**Jose Alarcón** - Founder of **Paramo Labs S.A.S.**
-
----
-
 ### **Instrucciones para Ejecución Local**
 
 1.  **Backend:**
