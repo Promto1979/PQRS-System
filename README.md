@@ -13,7 +13,7 @@ Antes de entrar en el código, dale un vistazo a la interfaz final del ecosistem
 ### 🖥️ Panel de Gestión Administrativo (Dashboard)
 Esta es la vista principal que reciben los funcionarios. Destaca el uso de **React Cards** reactivas para métricas en tiempo real (Total, Nuevos, En Proceso, Cerrados) y una **DataTable** personalizada con filtros avanzados y estados visuales (Badges).
 
-![Dashboard Principal de Gestión PQRS](https://github.com/TU_USUARIO/TU_REPO/raw/main/screenshots/dashboard_principal.png)
+![Dashboard Principal de Gestión PQRS](screenshots/dashboard_principal.png)
 *Imagen 1: Visualización general del estado de las solicitudes y listado interactivo.*
 
 ### 📝 Sección Pública: Radicación de Solicitudes
