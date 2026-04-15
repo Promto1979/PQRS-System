@@ -19,7 +19,7 @@ Esta es la vista principal que reciben los funcionarios. Destaca el uso de **Rea
 ### 📝 Sección Pública: Radicación de Solicitudes
 Diseño limpio y enfocado en la UX para el ciudadano. Un formulario responsivo validado con **Pydantic** en el backend para asegurar la integridad de los datos de contacto y la descripción de la solicitud.
 
-![Modal de Gestión de Solicitud Individual](screenshots/gestion_modal.png)
+![Formulario Público de Radicación de PQRS](screenshots/radicar_solicitud.png)
 *Imagen 2: Interfaz responsiva para que el ciudadano registre su Petición, Queja o Reclamo.*
 
 ---
