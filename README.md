@@ -19,7 +19,7 @@ Esta es la vista principal que reciben los funcionarios. Destaca el uso de **Rea
 ### 📝 Sección Pública: Radicación de Solicitudes
 Diseño limpio y enfocado en la UX para el ciudadano. Un formulario responsivo validado con **Pydantic** en el backend para asegurar la integridad de los datos de contacto y la descripción de la solicitud.
 
-![Formulario Público de Radicación de PQRS](https://github.com/TU_USUARIO/TU_REPO/raw/main/screenshots/radicar_solicitud.png)
+![Modal de Gestión de Solicitud Individual](screenshots/gestion_modal.png)
 *Imagen 2: Interfaz responsiva para que el ciudadano registre su Petición, Queja o Reclamo.*
 
 ---
@@ -47,7 +47,7 @@ Diseño limpio y enfocado en la UX para el ciudadano. Un formulario responsivo v
 ### 1. Gestión Interna y Trazabilidad (Modal Dinámico)
 Implementación de un flujo de trabajo eficiente. Al dar clic en "Gestionar", se abre un **React Modal** que carga asíncronamente los detalles de la PQRS. El funcionario puede responder y cambiar el estado (ej: de RECIBIDO a CERRADO) en un solo paso, disparando notificaciones automáticas.
 
-![Modal de Gestión de Solicitud Individual](https://github.com/TU_USUARIO/TU_REPO/raw/main/screenshots/gestion_modal.png)
+![Modal de Gestión de Solicitud Individual](screenshots/gestion_modal.png)
 *Imagen 3: Flujo de gestión interna: detalle de la solicitud y formulario de respuesta integrada.*
 
 ### 2. Consulta de Estado y Transparencia
@@ -55,7 +55,9 @@ El ciudadano puede consultar el avance de su trámite sin loguearse. Se validó 
 
 | Búsqueda por Radicado | Visualización de Respuesta Oficial |
 | :---: | :---: |
-| ![Modal de Búsqueda de Estado](https://github.com/TU_USUARIO/TU_REPO/raw/main/screenshots/consulta_estado_busqueda.png) | ![Detalle de Respuesta Oficial](https://github.com/TU_USUARIO/TU_REPO/raw/main/screenshots/consulta_estado_resultado.png) |
+| | Búsqueda por Radicado | Visualización de Respuesta Oficial |
+| :---: | :---: |
+| ![Modal de Búsqueda de Estado](screenshots/consulta_estado_busqueda.png) | ![Detalle de Respuesta Oficial](screenshots/consulta_estado_resultado.png) | | ![Detalle de Respuesta Oficial](https://github.com/TU_USUARIO/TU_REPO/raw/main/screenshots/consulta_estado_resultado.png) |
 | *Validación de input para formato PQRS-YYYY...* | *Muestra estado actual y la respuesta final del funcionario.* |
 
 ---
